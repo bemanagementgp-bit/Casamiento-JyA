@@ -1,0 +1,66 @@
+.section {
+  background: var(--bg-warm);
+  padding: 5rem 1.25rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--accent-strong);
+  margin-bottom: 1rem;
+}
+
+.description {
+  max-width: 540px;
+  margin: 0 auto 2.5rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.paletteLabel {
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+  margin-bottom: 1.25rem;
+}
+
+.palette {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.chip {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow-soft);
+}
+
+.name {
+  font-size: 0.78rem;
+  color: var(--ink-soft);
+  letter-spacing: 0.05em;
+}
+
+.icon {
+  font-size: 2.4rem;
+  color: var(--accent-strong);
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+}

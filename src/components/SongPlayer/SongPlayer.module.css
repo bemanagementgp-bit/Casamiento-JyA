@@ -1,0 +1,24 @@
+.wrap {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.frame {
+  margin-top: 1rem;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.frame iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
+.note {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-top: 1.5rem;
+}

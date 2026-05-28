@@ -1,0 +1,138 @@
+.section {
+  background: var(--bg-cream);
+  color: var(--ink);
+  padding: 4.5rem 1.25rem 5rem;
+  text-align: center;
+}
+
+.star {
+  font-size: 1.4rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.8rem, 4.5vw, 2.4rem);
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.divider {
+  width: 36px;
+  height: 1px;
+  background: var(--ink);
+  opacity: 0.5;
+  margin: 0.6rem auto 2rem;
+}
+
+.form {
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+.choices {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2.25rem;
+}
+
+.choice {
+  padding: 0.75rem 1.4rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink);
+  transition: background 0.2s, color 0.2s;
+  flex: 1;
+  max-width: 160px;
+}
+
+.choice.active {
+  background: var(--ink);
+  color: var(--bg-cream);
+}
+
+.field {
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+.label {
+  display: block;
+  text-align: center;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.7rem 0.5rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--ink);
+  border-radius: 0;
+  font-size: 0.95rem;
+  color: var(--ink);
+  outline: none;
+  text-align: center;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  border-bottom-color: var(--accent-strong);
+}
+
+.menuBlock {
+  margin-top: 2.5rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(46, 42, 38, 0.15);
+  text-align: center;
+}
+
+.menuIcon {
+  font-size: 1.8rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  display: inline-flex;
+}
+
+.menuTitle {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.4rem, 3.5vw, 1.7rem);
+  margin-bottom: 1.5rem;
+  color: var(--ink);
+}
+
+.menuField {
+  margin-bottom: 0;
+}
+
+.submit {
+  display: block;
+  margin: 2rem auto 0;
+  padding: 0.8rem 2.5rem;
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  border-radius: 999px;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  transition: background 0.25s, color 0.25s;
+}
+
+.submit:hover {
+  background: var(--ink);
+  color: var(--bg-cream);
+}
