@@ -9,7 +9,7 @@ export const event = {
   yearLabel: '2026',
   timeLabel: '21:00 hs.',
   city: 'City Bell',
-  instagram: 'https://instagram.com/',
+  instagram: 'https://instagram.com/bodajuliyalan',
 
   // Ceremonia y fiesta
   venue: {
@@ -22,18 +22,7 @@ export const event = {
       'Casa Perez, Camino Centenario 7019, City Bell, La Plata, Buenos Aires, Argentina',
   },
 
-  // Civil
-  civil: {
-    name: 'Registro',
-    address: 'Cno. Centenario nro. 7019 e/461F y 462',
-    city: 'City Bell · La Plata',
-    dateLabel: '20 de Octubre',
-    timeLabel: '12:00 hs.',
-    mapsQuery:
-      'Camino Centenario 7019, City Bell, La Plata, Buenos Aires, Argentina',
-  },
-
-  whatsapp: '5492215585466', // formato internacional sin +
+  whatsapp: '5492216554309', // formato internacional sin +
 
   spotify: {
     songUri: 'spotify:track:6qqrTXSdwiJaq8SO0X2lSe', // canción de fondo
@@ -61,8 +50,4 @@ export const event = {
 
 export const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
   event.venue.mapsQuery
-)}`;
-
-export const civilMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-  event.civil.mapsQuery
 )}`;

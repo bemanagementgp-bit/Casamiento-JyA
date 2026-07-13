@@ -1,7 +1,6 @@
 import styles from './EventInfo.module.css';
-import { GiLinkedRings } from 'react-icons/gi';
 import { PiHouseLineLight } from 'react-icons/pi';
-import { event, mapsUrl, civilMapsUrl } from '../../data/event.js';
+import { event, mapsUrl } from '../../data/event.js';
 
 function Card({ eyebrow, icon, name, address, city, dateLabel, timeLabel, href }) {
   return (
@@ -32,16 +31,6 @@ export default function EventInfo() {
   return (
     <section className={styles.section}>
       <div className={styles.grid}>
-        <Card
-          eyebrow="El civil"
-          icon={<GiLinkedRings />}
-          name={event.civil.name}
-          address={event.civil.address}
-          city={event.civil.city}
-          dateLabel={event.civil.dateLabel}
-          timeLabel={event.civil.timeLabel}
-          href={civilMapsUrl}
-        />
         <Card
           eyebrow="Ceremonia y fiesta"
           icon={<PiHouseLineLight />}
