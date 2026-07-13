@@ -1,0 +1,35 @@
+/* Contenedor oculto del iframe de Spotify */
+.hidden {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0.01;
+  pointer-events: none;
+}
+
+/* Botón flotante de música */
+.fab {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 90;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+  color: var(--on-dark);
+  font-size: 1rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--line-dark);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.fab:hover {
+  transform: scale(1.08);
+}

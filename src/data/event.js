@@ -36,6 +36,7 @@ export const event = {
   whatsapp: '5492215585466', // formato internacional sin +
 
   spotify: {
+    songUri: 'spotify:track:6qqrTXSdwiJaq8SO0X2lSe', // canción de fondo
     songEmbed:
       'https://open.spotify.com/embed/track/6qqrTXSdwiJaq8SO0X2lSe?utm_source=generator',
     playlistEmbed:
@@ -44,7 +45,7 @@ export const event = {
 
   gift: {
     pesos: {
-      bank: '',
+      bank: 'Mercado Pago',
       holder: 'Julieta Daniela Dusio',
       alias: 'BODAJULIALAN',
       cvu: '0000003100061753018746',

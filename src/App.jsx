@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Envelope from './components/Envelope/Envelope.jsx';
+import MusicPlayer from './components/MusicPlayer/MusicPlayer.jsx';
 import Hero from './components/Hero/Hero.jsx';
 import Countdown from './components/Countdown/Countdown.jsx';
 import EventInfo from './components/EventInfo/EventInfo.jsx';
@@ -20,6 +21,7 @@ export default function App() {
   return (
     <>
       {!opened && <Envelope onOpen={handleOpen} />}
+      <MusicPlayer start={opened} />
       <main>
         <Hero />
         <Countdown />
