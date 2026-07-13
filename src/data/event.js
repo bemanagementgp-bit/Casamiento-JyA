@@ -30,7 +30,7 @@ export const event = {
     dateLabel: '20 de Octubre',
     timeLabel: '12:00 hs.',
     mapsQuery:
-      'Registro Civil City Bell, La Plata, Buenos Aires, Argentina',
+      'Camino Centenario 7019, City Bell, La Plata, Buenos Aires, Argentina',
   },
 
   whatsapp: '5492215585466', // formato internacional sin +

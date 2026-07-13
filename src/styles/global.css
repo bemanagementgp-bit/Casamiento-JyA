@@ -1,25 +1,25 @@
 :root {
-  /* paleta minimalista: blanco + azul oscuro */
+  /* paleta: blanco + dorado */
   --bg-cream: #ffffff;
   --bg-cream-soft: #ffffff;
   --bg-warm: #ffffff;
-  --bg-dark: #2d3340;
-  --bg-dark-soft: #353c4a;
-  --ink: #2d3340;
-  --ink-soft: #2d3340;
-  --muted: #2d3340;
+  --bg-dark: #aa8749;
+  --bg-dark-soft: #9a7840;
+  --ink: #aa8749;
+  --ink-soft: #aa8749;
+  --muted: #aa8749;
   --on-dark: #ffffff;
   --on-dark-soft: rgba(255, 255, 255, 0.7);
-  --accent: #2d3340;
-  --accent-strong: #2d3340;
-  --accent-deep: #2d3340;
-  --line: rgba(45, 51, 64, 0.15);
+  --accent: #aa8749;
+  --accent-strong: #9a7840;
+  --accent-deep: #8a6a32;
+  --line: rgba(170, 135, 73, 0.15);
   --line-dark: rgba(255, 255, 255, 0.2);
-  --shadow-soft: 0 10px 40px rgba(45, 51, 64, 0.12);
+  --shadow-soft: 0 10px 40px rgba(170, 135, 73, 0.12);
 
-  --font-display: 'Alcyone', Georgia, serif;
-  --font-script: 'Alcyone', cursive;
-  --font-body: 'Alcyone', system-ui, -apple-system, sans-serif;
+  --font-display: 'RecklessNeue', Georgia, serif;
+  --font-script: 'RecklessNeue', Georgia, serif;
+  --font-body: 'Alcyone', Georgia, serif;
 
   /* filtro unificado para las fotos: baja saturación y empareja los colores entre sí */
   --photo-filter: grayscale(0.55) saturate(0.75) contrast(0.95) brightness(1.03);

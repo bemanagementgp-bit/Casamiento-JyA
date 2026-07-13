@@ -7,6 +7,8 @@ import EventInfo from './components/EventInfo/EventInfo.jsx';
 import Gallery from './components/Gallery/Gallery.jsx';
 import Playlist from './components/Playlist/Playlist.jsx';
 import Rsvp from './components/Rsvp/Rsvp.jsx';
+import DressCode from './components/DressCode/DressCode.jsx';
+import SpecialMenu from './components/SpecialMenu/SpecialMenu.jsx';
 import GiftRegistry from './components/GiftRegistry/GiftRegistry.jsx';
 import Footer from './components/Footer/Footer.jsx';
 
@@ -29,6 +31,8 @@ export default function App() {
         <Gallery />
         <Playlist />
         <Rsvp />
+        <DressCode />
+        <SpecialMenu />
         <GiftRegistry />
         <Footer />
       </main>

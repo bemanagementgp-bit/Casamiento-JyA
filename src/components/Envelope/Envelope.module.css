@@ -73,7 +73,7 @@
   margin-left: -55px;
   margin-top: -55px;
   border-radius: 50%;
-  background: #2d3340;
+  background: var(--bg-dark);
   color: #ffffff;
   display: grid;
   place-items: center;
