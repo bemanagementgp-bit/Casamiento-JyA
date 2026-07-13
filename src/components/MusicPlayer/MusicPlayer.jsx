@@ -3,86 +3,58 @@ import { FaMusic, FaPause } from 'react-icons/fa';
 import styles from './MusicPlayer.module.css';
 import { event } from '../../data/event.js';
 
-// Reproductor de fondo: usa la iFrame API de Spotify, oculto,
+// Reproductor de fondo: audio local en loop (canción completa),
 // con un botón flotante para pausar/reanudar.
 export default function MusicPlayer({ start }) {
-  const controllerRef = useRef(null);
-  const initializedRef = useRef(false);
-  const [ready, setReady] = useState(false);
+  const audioRef = useRef(null);
   const [playing, setPlaying] = useState(false);
 
+  const play = () => {
+    audioRef.current?.play().catch(() => {
+      // Autoplay bloqueado: se reintenta con el primer gesto del usuario
+    });
+  };
+
+  // Intenta arrancar automáticamente al cargar; si el navegador lo bloquea,
+  // arranca con el primer toque/click (por ej. al abrir el sobre).
   useEffect(() => {
-    // Evita la doble inicialización de React.StrictMode en desarrollo
-    if (initializedRef.current) return;
-    initializedRef.current = true;
-
-    if (!document.getElementById('spotify-iframe-api')) {
-      const script = document.createElement('script');
-      script.id = 'spotify-iframe-api';
-      script.src = 'https://open.spotify.com/embed/iframe-api/v1';
-      script.async = true;
-      document.body.appendChild(script);
-    }
-
-    window.onSpotifyIframeApiReady = (IFrameAPI) => {
-      IFrameAPI.createController(
-        document.getElementById('bg-music-embed'),
-        { uri: event.spotify.songUri, width: 1, height: 1 },
-        (controller) => {
-          controllerRef.current = controller;
-          controller.addListener('playback_update', (e) => {
-            setPlaying(!e.data.isPaused);
-          });
-          // Esperar a que el iframe del embed termine de cargar
-          controller.addListener('ready', () => setReady(true));
-        }
-      );
-    };
-  }, []);
-
-  // Intenta arrancar automáticamente apenas la API está lista.
-  // Si el navegador bloquea el autoplay, arranca con el primer toque/click
-  // en cualquier parte de la página (por ej. al abrir el sobre).
-  useEffect(() => {
-    if (!ready) return;
-
-    controllerRef.current?.play();
-
-    const startOnGesture = () => {
-      controllerRef.current?.resume();
-      controllerRef.current?.play();
-    };
+    play();
+    const startOnGesture = () => play();
     window.addEventListener('pointerdown', startOnGesture, { once: true });
     return () => window.removeEventListener('pointerdown', startOnGesture);
-  }, [ready]);
+  }, []);
 
   // Refuerzo: al abrir el sobre, asegura que esté sonando
   useEffect(() => {
-    if (start && ready && !playing) {
-      controllerRef.current?.play();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [start, ready]);
+    if (start) play();
+  }, [start]);
 
-  const toggle = () => controllerRef.current?.togglePlay();
+  const toggle = () => {
+    if (!audioRef.current) return;
+    if (audioRef.current.paused) play();
+    else audioRef.current.pause();
+  };
 
   return (
     <>
-      <div className={styles.hidden} aria-hidden="true">
-        <div id="bg-music-embed" />
-      </div>
+      <audio
+        ref={audioRef}
+        src={event.songFile}
+        loop
+        preload="auto"
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+      />
 
-      {ready && (
-        <button
-          type="button"
-          className={styles.fab}
-          onClick={toggle}
-          aria-label={playing ? 'Pausar música' : 'Reproducir música'}
-          title={playing ? 'Pausar música' : 'Reproducir música'}
-        >
-          {playing ? <FaPause /> : <FaMusic />}
-        </button>
-      )}
+      <button
+        type="button"
+        className={styles.fab}
+        onClick={toggle}
+        aria-label={playing ? 'Pausar música' : 'Reproducir música'}
+        title={playing ? 'Pausar música' : 'Reproducir música'}
+      >
+        {playing ? <FaPause /> : <FaMusic />}
+      </button>
     </>
   );
 }

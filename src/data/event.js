@@ -24,6 +24,9 @@ export const event = {
 
   whatsapp: '5492216554309', // formato internacional sin +
 
+  // Canción de fondo: archivo local en public/audio/ (suena completa y en loop)
+  songFile: '/audio/ordinary.m4a',
+
   spotify: {
     songUri: 'spotify:track:6qqrTXSdwiJaq8SO0X2lSe', // canción de fondo
     songEmbed:
