@@ -34,10 +34,10 @@
 */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1.45fr 1fr;
   grid-template-rows: auto auto;
   gap: 1rem;
-  max-width: 820px;
+  max-width: 980px;
   margin: 0 auto;
 }
 
@@ -46,6 +46,7 @@
   border: 1px solid rgba(46, 42, 38, 0.2);
   overflow: hidden;
   border-radius: 2px;
+  cursor: pointer;
 }
 
 .item img {
@@ -77,5 +78,87 @@
   }
   .item2 {
     transform: translateY(1.5rem);
+  }
+}
+
+/* ---- Lightbox ---- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(20, 16, 8, 0.92);
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.lbImg {
+  max-width: min(92vw, 900px);
+  max-height: 84vh;
+  object-fit: contain;
+  border-radius: 2px;
+  filter: var(--photo-filter);
+  touch-action: pan-y;
+  cursor: grab;
+}
+
+.lbImg:active {
+  cursor: grabbing;
+}
+
+.lbClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  font-size: 2rem;
+  color: #ffffff;
+  display: inline-flex;
+  padding: 0.4rem;
+  opacity: 0.85;
+}
+
+.lbClose:hover {
+  opacity: 1;
+}
+
+.lbNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  font-size: 2.4rem;
+  color: #ffffff;
+  display: inline-flex;
+  padding: 0.5rem;
+  opacity: 0.8;
+}
+
+.lbNav:hover {
+  opacity: 1;
+}
+
+.lbPrev {
+  left: 0.5rem;
+}
+
+.lbNext {
+  right: 0.5rem;
+}
+
+.lbCount {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+}
+
+@media (max-width: 640px) {
+  .lbNav {
+    font-size: 1.9rem;
   }
 }
