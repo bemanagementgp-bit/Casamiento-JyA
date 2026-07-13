@@ -40,11 +40,28 @@ export default function MusicPlayer({ start }) {
     };
   }, []);
 
-  // Arranca la música cuando se abre el sobre (gesto del usuario) y la API está lista
+  // Intenta arrancar automáticamente apenas la API está lista.
+  // Si el navegador bloquea el autoplay, arranca con el primer toque/click
+  // en cualquier parte de la página (por ej. al abrir el sobre).
   useEffect(() => {
-    if (start && ready) {
+    if (!ready) return;
+
+    controllerRef.current?.play();
+
+    const startOnGesture = () => {
+      controllerRef.current?.resume();
+      controllerRef.current?.play();
+    };
+    window.addEventListener('pointerdown', startOnGesture, { once: true });
+    return () => window.removeEventListener('pointerdown', startOnGesture);
+  }, [ready]);
+
+  // Refuerzo: al abrir el sobre, asegura que esté sonando
+  useEffect(() => {
+    if (start && ready && !playing) {
       controllerRef.current?.play();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [start, ready]);
 
   const toggle = () => controllerRef.current?.togglePlay();
@@ -55,7 +72,7 @@ export default function MusicPlayer({ start }) {
         <div id="bg-music-embed" />
       </div>
 
-      {start && ready && (
+      {ready && (
         <button
           type="button"
           className={styles.fab}
