@@ -69,14 +69,13 @@
 .item5 { grid-column: 3; grid-row: 2; }
 
 @media (max-width: 640px) {
+  /* Mismo layout de 3 columnas del desktop, con la columna
+     del medio desfasada hacia abajo (estilo mockup) */
   .grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+    gap: 0.6rem;
+    padding-bottom: 1.5rem;
   }
-  .item1 { grid-column: 1; grid-row: auto; }
-  .item2 { grid-column: 1 / -1; grid-row: auto; }
-  .item2 img { aspect-ratio: 4 / 3; }
-  .item3 { grid-column: 2; grid-row: auto; }
-  .item4 { grid-column: 1; grid-row: auto; }
-  .item5 { grid-column: 2; grid-row: auto; }
+  .item2 {
+    transform: translateY(1.5rem);
+  }
 }
