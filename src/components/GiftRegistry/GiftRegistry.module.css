@@ -42,6 +42,20 @@
   margin: 0 auto;
 }
 
+.currency {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--on-dark);
+  margin-bottom: 1.25rem;
+}
+
+.currencySpaced {
+  margin-top: 2.5rem;
+}
+
 .row {
   margin-bottom: 1rem;
 }

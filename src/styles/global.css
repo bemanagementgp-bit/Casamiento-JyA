@@ -20,6 +20,9 @@
   --font-display: 'Alcyone', Georgia, serif;
   --font-script: 'Alcyone', cursive;
   --font-body: 'Alcyone', system-ui, -apple-system, sans-serif;
+
+  /* filtro unificado para las fotos: baja saturación y empareja los colores entre sí */
+  --photo-filter: grayscale(0.55) saturate(0.75) contrast(0.95) brightness(1.03);
 }
 
 * {

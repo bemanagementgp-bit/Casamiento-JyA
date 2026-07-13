@@ -2,8 +2,7 @@
   position: relative;
   min-height: 100vh;
   min-height: 100svh;
-  background-size: cover;
-  background-position: center 80%; /* más arriba, centrada */
+  overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,10 +12,19 @@
   padding: 4rem 1.5rem 6rem;
 }
 
+.bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 80%; /* más arriba, centrada */
+  filter: var(--photo-filter);
+}
+
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
+  z-index: 0;
   background: linear-gradient(
     180deg,
     rgba(46, 42, 38, 0.25) 0%,

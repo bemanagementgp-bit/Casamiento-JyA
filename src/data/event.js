@@ -43,10 +43,18 @@ export const event = {
   },
 
   gift: {
-    bank: '',
-    holder: '',
-    alias: '',
-    cbu: '',
+    pesos: {
+      bank: '',
+      holder: 'Julieta Daniela Dusio',
+      alias: 'BODAJULIALAN',
+      cvu: '0000003100061753018746',
+    },
+    dolares: {
+      bank: 'Banco Industrial (BIND)',
+      holder: 'Julieta Daniela Dusio',
+      alias: 'aula.manera.contuve',
+      cvu: '3220001888088436180011',
+    },
   },
 };
 

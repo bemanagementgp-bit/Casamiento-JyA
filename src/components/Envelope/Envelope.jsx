@@ -9,8 +9,7 @@ export default function Envelope({ onOpen }) {
   const handleClick = () => {
     if (opening) return;
     setOpening(true);
-    // Avisamos al padre cuando empieza la animación; el padre muestra el sitio
-    // detrás del overlay y hace scroll cuando termina.
+
     setTimeout(() => onOpen?.(), 1100);
   };
 

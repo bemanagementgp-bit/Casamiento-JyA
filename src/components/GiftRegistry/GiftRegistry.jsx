@@ -25,10 +25,19 @@ export default function GiftRegistry() {
       </p>
 
       <div className={styles.fields}>
-        <Row label="Banco" value={gift.bank} />
-        <Row label="Nombre completo" value={gift.holder} />
-        <Row label="Alias" value={gift.alias} />
-        <Row label="CBU" value={gift.cbu} />
+        <h3 className={styles.currency}>Pesos</h3>
+        <Row label="Banco" value={gift.pesos.bank} />
+        <Row label="Nombre completo" value={gift.pesos.holder} />
+        <Row label="Alias" value={gift.pesos.alias} />
+        <Row label="CVU" value={gift.pesos.cvu} />
+
+        <h3 className={`${styles.currency} ${styles.currencySpaced}`}>
+          Dólares
+        </h3>
+        <Row label="Banco" value={gift.dolares.bank} />
+        <Row label="Nombre completo" value={gift.dolares.holder} />
+        <Row label="Alias" value={gift.dolares.alias} />
+        <Row label="CVU" value={gift.dolares.cvu} />
       </div>
     </section>
   );

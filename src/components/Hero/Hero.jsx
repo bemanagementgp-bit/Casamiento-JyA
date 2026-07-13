@@ -5,11 +5,11 @@ import { heroPhoto } from '../../data/photos.js';
 
 export default function Hero() {
   return (
-    <section
-      id="inicio"
-      className={styles.hero}
-      style={{ backgroundImage: `url(${heroPhoto})` }}
-    >
+    <section id="inicio" className={styles.hero}>
+      <div
+        className={styles.bg}
+        style={{ backgroundImage: `url(${heroPhoto})` }}
+      />
       <div className={styles.content}>
         <div className={styles.badge}>{event.brideAndGroom}</div>
         <h1 className={styles.title}>Nos casamos</h1>
