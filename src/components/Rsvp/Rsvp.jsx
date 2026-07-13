@@ -37,6 +37,7 @@ export default function Rsvp() {
       <section className={styles.section}>
         <div className={styles.star}>✦</div>
         <h2 className={styles.title}>Confirmar asistencia</h2>
+        <p className={styles.note}>(solo adultos)</p>
         <div className={styles.divider} />
 
         <form className={styles.form} onSubmit={handleSubmit}>

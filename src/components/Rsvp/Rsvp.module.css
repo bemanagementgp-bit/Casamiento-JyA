@@ -20,6 +20,15 @@
   color: var(--ink);
 }
 
+.note {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink);
+  opacity: 0.75;
+  margin-top: -0.2rem;
+}
+
 .divider {
   width: 36px;
   height: 1px;
